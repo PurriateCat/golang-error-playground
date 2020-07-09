@@ -6,19 +6,19 @@ import (
 	"os"
 )
 
-type HttpError struct {
+type HttpSimpleError struct {
 	status int
 	method string
 }
 
-func (httpError *HttpError) Error() string {
+func (httpError *HttpSimpleError) Error() string {
 	return fmt.Sprintf("Something went wrong with %v request. Status: %v",
 		httpError.method,
 		httpError.status)
 }
 
 func CreateSomething() (string, error) {
-	return "", &HttpError{404, "GET"}
+	return "", &HttpSimpleError{404, "GET"}
 }
 
 func main() {
