@@ -30,14 +30,46 @@ jobs:
             dep ensure
         fi
 
+
+
     - name: Build custom http error
-      run: cd custom_http_error && go build -v
+      run: cd custom_http_error && go build -v -o custom_http_error
+    
+    - name: Upload custom_http_error
+      uses: actions/upload-artifact@v1
+      with:
+        name: custom_http_error
+        path: ./custom_http_error/custom_http_error
+
+
 
     - name: Build custom struct error
-      run: cd custom_struct_error && go build -v
+      run: cd custom_struct_error && go build -v -o custom_struct_error
+
+    - name: Upload custom_struct_error
+      uses: actions/upload-artifact@v1
+      with:
+        name: custom_struct_error
+        path: ./custom_struct_error/custom_struct_error
+
+
 
     - name: Build errors package
-      run: cd errors_package && go build -v
+      run: cd errors_package && go build -v -o errors_package
+      
+    - name: Upload errors_package
+      uses: actions/upload-artifact@v1
+      with:
+        name: errors_package
+        path: ./errors_package/errors_package
+
+
 
     - name: Build type assertion
-      run: cd type_assertion && go build -v
+      run: cd type_assertion && go build -v -o type_assertion
+
+    - name: Upload type assertion
+      uses: actions/upload-artifact@v1
+      with:
+        name: type_assertion
+        path: ./type_assertion/type_assertion
