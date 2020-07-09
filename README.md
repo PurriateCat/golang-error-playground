@@ -1,3 +1,5 @@
+![Go](https://github.com/PurriateCat/golang-error-playground/workflows/Go/badge.svg)
+
 # golang-error-playground
 Some small golang programs that shows how to use and handle errors.
 
