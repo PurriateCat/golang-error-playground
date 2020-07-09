@@ -31,13 +31,13 @@ jobs:
         fi
 
     - name: Build custom http error
-      run: go build -v ./custom_http_error
+      run: cd custom_http_error && go build -v
 
     - name: Build custom struct error
-      run: go build -v ./custom_struct_error
+      run: cd custom_struct_error && go build -v
 
     - name: Build errors package
-      run: go build -v ./errors_package
+      run: cd errors_package && go build -v
 
     - name: Build type assertion
-      run: go build -v ./type_assertion
+      run: cd type_assertion && go build -v
