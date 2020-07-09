@@ -7,8 +7,8 @@ import (
 )
 
 type HttpError struct {
-	status int
-	method string
+	status  int
+	method  string
 	message string
 }
 
@@ -20,6 +20,7 @@ func (httpError *HttpError) Error() string {
 type InternalServerError struct {
 	HttpError
 }
+
 func NewInternalServerError(method string) *InternalServerError {
 	return &InternalServerError{HttpError{
 		status:  500,
@@ -31,6 +32,7 @@ func NewInternalServerError(method string) *InternalServerError {
 type MethodNotAllowedError struct {
 	HttpError
 }
+
 func NewMethodNotAllowedError(method string) *MethodNotAllowedError {
 	return &MethodNotAllowedError{HttpError{
 		status:  405,
@@ -60,10 +62,10 @@ func main() {
 		fmt.Println(result)
 		os.Exit(0)
 	case *MethodNotAllowedError:
-		log.Errorln("Wrong HTTP Method: "+err.Error())
+		log.Errorln("Wrong HTTP Method: " + err.Error())
 		os.Exit(1)
 	case *InternalServerError:
-		log.Errorln("Error: "+err.Error())
+		log.Errorln("Error: " + err.Error())
 		os.Exit(2)
 	}
 }
