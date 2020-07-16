@@ -1,5 +1,5 @@
 ![Go](https://github.com/PurriateCat/golang-error-playground/workflows/Go/badge.svg)
-![Lint](https://github.com/PurriateCat/golang-error-playground/workflows/Lint%20Code%20Base/badge.svg?branch=master)
+![golangci-lint](https://github.com/PurriateCat/golang-error-playground/workflows/golangci-lint/badge.svg)
 
 # golang-error-playground
 Some small golang programs that shows how to use and handle errors.
