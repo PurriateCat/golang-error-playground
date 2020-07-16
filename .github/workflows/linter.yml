@@ -10,8 +10,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: golangci-lint
+
+      - name: golangci-lint ./custom_http_error
         uses: golangci/golangci-lint-action@v1
         with:
           version: v1.28
           working-directory: ./custom_http_error
+
+      - name: golangci-lint ./custom_struct_error
+        uses: golangci/golangci-lint-action@v1
+        with:
+          version: v1.28
+          working-directory: ./custom_struct_error
+
+      - name: golangci-lint ./errors_package
+        uses: golangci/golangci-lint-action@v1
+        with:
+          version: v1.28
+          working-directory: ./errors_package
+
+      - name: golangci-lint ./type_assertion
+        uses: golangci/golangci-lint-action@v1
+        with:
+          version: v1.28
+          working-directory: ./type_assertion
+
+      - name: golangci-lint ./errors_with_is_as
+        uses: golangci/golangci-lint-action@v1
+        with:
+          version: v1.28
+          working-directory: ./errors_with_is_as
